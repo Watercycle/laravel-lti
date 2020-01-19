@@ -4,7 +4,7 @@ namespace RobertBoes\LaravelLti\ToolProvider;
 
 use IMSGlobal\LTI\ToolProvider\ToolProvider as LTIToolProvider;
 use RobertBoes\LaravelLti\Exceptions\ToolProviderNotSetException;
-use RobertBoes\LaravelLti\LTI;
+use RobertBoes\LaravelLti\Services\LtiService;
 
 class ToolProvider extends ToolBase
 {
@@ -13,7 +13,7 @@ class ToolProvider extends ToolBase
      */
     private $provider;
 
-    public function __construct(LTI $lti)
+    public function __construct(LtiService $lti)
     {
         parent::__construct($lti);
         $this->provider = new ToolProviderBase($this->dataConnector());

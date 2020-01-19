@@ -1,24 +1,31 @@
 <?php
 
-namespace RobertBoes\LaravelLti;
+namespace RobertBoes\LaravelLti\Providers;
 
 use Illuminate\Support\ServiceProvider as IlluminateServiceProvider;
+use RobertBoes\LaravelLti\Services\LtiService;
 
-class ServiceProvider extends IlluminateServiceProvider
+/**
+ */
+class LtiServiceProvider extends IlluminateServiceProvider
 {
+    protected $defer = false;
+
+    /**
+     */
     public function boot()
     {
-        $this->publishes([
-            __DIR__.'/../config/laravel-lti.php' => config_path('laravel-lti.php'),
-        ], 'config');
+        $this->app->bind('lti', LtiService::class);
+    }
 
+    /**
+     */
+    public function register()
+    {
         $this->publishes([
             __DIR__.'/../database/migrations/' => database_path('/migrations'),
         ],'migrations');
-    }
 
-    public function register()
-    {
         $this->commands([
             \RobertBoes\LaravelLti\Commands\CreateToolConsumerCommand::class
         ]);

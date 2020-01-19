@@ -2,16 +2,16 @@
 
 namespace RobertBoes\LaravelLti\ToolProvider;
 
-use RobertBoes\LaravelLti\LTI;
+use RobertBoes\LaravelLti\Services\LtiService;
 
 class ToolBase
 {
     /**
-     * @var \RobertBoes\LaravelLti\LTI
+     * @var \RobertBoes\LaravelLti\Services\LtiService
      */
     private $lti;
 
-    public function __construct(LTI $lti)
+    public function __construct(LtiService $lti)
     {
         $this->lti = $lti;
     }

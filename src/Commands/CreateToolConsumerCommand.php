@@ -3,8 +3,9 @@
 namespace RobertBoes\LaravelLti\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\DB;
 use IMSGlobal\LTI\ToolProvider\ToolConsumer;
-use RobertBoes\LaravelLti\LTI;
+use RobertBoes\LaravelLti\Services\LtiService;
 
 class CreateToolConsumerCommand extends Command
 {
@@ -13,7 +14,7 @@ class CreateToolConsumerCommand extends Command
     protected $description = 'Creates a new tool consumer';
 
     /**
-     * @var \RobertBoes\LaravelLti\LTI
+     * @var \RobertBoes\LaravelLti\Services\LtiServce
      */
     protected $lti;
 
@@ -27,7 +28,7 @@ class CreateToolConsumerCommand extends Command
     public function __construct()
     {
         parent::__construct();
-        $this->lti = new LTI();
+        $this->lti = new LtiService();
         $this->toolConsumer = $this->lti->toolConsumer();
     }
 

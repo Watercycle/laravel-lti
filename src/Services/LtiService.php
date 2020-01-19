@@ -1,13 +1,15 @@
 <?php
 
-namespace RobertBoes\LaravelLti;
+namespace RobertBoes\LaravelLti\Services;
 
 use Illuminate\Support\Facades\DB;
 use IMSGlobal\LTI\ToolProvider\DataConnector\DataConnector;
 use RobertBoes\LaravelLti\ToolProvider\ToolConsumer;
 use RobertBoes\LaravelLti\ToolProvider\ToolProvider;
 
-class LTI
+/**
+ */
+class LtiService
 {
     /**
      * @var \IMSGlobal\LTI\ToolProvider\DataConnector\DataConnector
@@ -24,12 +26,17 @@ class LTI
      */
     private $toolConsumer = null;
 
+    /**
+     */
     public function __construct()
     {
-        $db = DB::connection(config('laravel-lti.database.connection'))->getPdo();
-        $this->data_connector = DataConnector::getDataConnector(config('laravel-lti.database.prefix'), $db, 'pdo');
+        $connection = 'database. ' . config('database.default');
+        $db = DB::connection(config($connection))->getPdo();
+        $this->data_connector = DataConnector::getDataConnector(config($connection . '.prefix'), $db, 'pdo');
     }
 
+    /**
+     */
     public function getDataConnector() {
         return $this->data_connector;
     }
