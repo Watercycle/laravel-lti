@@ -23,7 +23,7 @@ class LtiServiceProvider extends IlluminateServiceProvider
     public function register()
     {
         $this->publishes([
-            __DIR__.'/../database/migrations/' => database_path('/migrations'),
+            __DIR__ . '/../../database/migrations/' => database_path('/migrations'),
         ],'migrations');
 
         $this->commands([
