@@ -28,8 +28,8 @@ class CreateLTITables extends Migration
             $table->text('profile')->nullable();
             $table->text('tool_proxy')->nullable();
             $table->text('settings')->nullable();
-            $table->boolean('protected');
-            $table->boolean('enabled');
+            $table->boolean('protected')->nullable()->default(null);
+            $table->boolean('enabled')->nullable()->default(null);
             $table->dateTime('enable_from')->nullable();
             $table->dateTime('enable_until')->nullable();
             $table->date('last_access')->nullable();
@@ -110,7 +110,7 @@ class CreateLTITables extends Migration
         Schema::create($this->prefix . 'lti2_share_key', function (Blueprint $table) {
             $table->string('share_key_id', 32);
             $table->integer('resource_link_pk')->unsigned();
-            $table->boolean('auto_approve');
+            $table->boolean('auto_approve')->nullable()->default(null);
             $table->dateTime('expires');
 
             $table->foreign('resource_link_pk', 'lti2_share_key_lti2_resource_link_FK1')
