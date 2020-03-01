@@ -122,14 +122,13 @@ class CreateLTITables extends Migration
     public function down()
     {
         Schema::disableForeignKeyConstraints();
-        Schema::drop($this->prefix . 'lti2_consumer');
-        Schema::drop($this->prefix . 'lti2_tool_proxy');
-        Schema::drop($this->prefix . 'lti2_nonce');
-        Schema::drop($this->prefix . 'lti2_context');
-        Schema::drop($this->prefix . 'lti2_resource_link');
-        Schema::drop($this->prefix . 'lti2_user_result');
-        Schema::drop($this->prefix . 'lti2_share_key');
-        Schema::drop($this->prefix . 'users_lti_links');
+        Schema::dropIfExists($this->prefix . 'lti2_consumer');
+        Schema::dropIfExists($this->prefix . 'lti2_context');
+        Schema::dropIfExists($this->prefix . 'lti2_nonce');
+        Schema::dropIfExists($this->prefix . 'lti2_resource_link');
+        Schema::dropIfExists($this->prefix . 'lti2_share_key');
+        Schema::dropIfExists($this->prefix . 'lti2_tool_proxy');
+        Schema::dropIfExists($this->prefix . 'lti2_user_result');
         Schema::enableForeignKeyConstraints();
     }
 }
