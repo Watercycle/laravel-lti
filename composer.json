@@ -1,6 +1,6 @@
 {
     "name": "arietissoftware/laravel-lti",
-    "version" : "2.0.0",
+    "version" : "2.0.1",
     "description": "A Laravel implementation for the LTI Tool Provider Library",
     "keywords": [
         "lti", "imsglobal"

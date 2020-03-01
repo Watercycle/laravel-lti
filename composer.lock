@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6258affc94aa50c76183617b42aa1c69",
+    "content-hash": "49cf8fc0570921bb21c044105491e173",
     "packages": [
         {
             "name": "arietissoftware/lti",
