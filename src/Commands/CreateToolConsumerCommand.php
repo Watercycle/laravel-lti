@@ -49,7 +49,7 @@ class CreateToolConsumerCommand extends Command
         $this->info('Add optional parameters, enter "exit" to stop and save the new ToolConsumer');
         while($asking) {
             $property = $this->ask('Set property');
-            if($property === 'exit') {
+            if(empty($property) || $property === 'exit') {
                 $asking = false;
             }
             else {
