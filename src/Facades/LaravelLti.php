@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Facade as IlluminateFacade;
 
 /**
  */
-class Lti extends IlluminateFacade
+class LaravelLti extends IlluminateFacade
 {
     /**
      * Return facade accessor.
@@ -15,6 +15,6 @@ class Lti extends IlluminateFacade
      */
     protected static function getFacadeAccessor()
     {
-        return 'lti';
+        return 'laravel-lti';
     }
 }
