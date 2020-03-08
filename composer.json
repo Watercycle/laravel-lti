@@ -20,7 +20,7 @@
         }
     },
     "require": {
-        "php": "^5.6|^7.2",
+        "php": "^7.2",
         "arietissoftware/lti": "^3.0.3"
     },
     "autoload": {
@@ -34,7 +34,7 @@
                 "RobertBoes\\LaravelLti\\Providers\\LtiServiceProvider"
             ],
             "aliases": {
-                "lti": "RobertBoes\\LaravelLti\\Facades\\Lti"
+                "lti": "RobertBoes\\LaravelLti\\Facades\\LaravelLti"
             }
         }
     }
