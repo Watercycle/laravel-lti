@@ -7,7 +7,7 @@ use RobertBoes\LaravelLti\Services\LtiService;
 class ToolBase
 {
     /**
-     * @var \RobertBoes\LaravelLti\Services\LtiService
+     * @var LtiService
      */
     private $lti;
 

@@ -2,7 +2,6 @@
 
 namespace RobertBoes\LaravelLti\ToolProvider;
 
-use IMSGlobal\LTI\ToolProvider\ToolProvider as LTIToolProvider;
 use RobertBoes\LaravelLti\Exceptions\ToolProviderNotSetException;
 use RobertBoes\LaravelLti\Services\LtiService;
 

@@ -12,22 +12,20 @@ use RobertBoes\LaravelLti\ToolProvider\ToolProvider;
 class LtiService
 {
     /**
-     * @var \IMSGlobal\LTI\ToolProvider\DataConnector\DataConnector
+     * @var DataConnector
      */
     protected $data_connector;
 
     /**
-     * @var \RobertBoes\LaravelLti\ToolProvider\ToolProvider
+     * @var ToolProvider
      */
     private $toolProvider = null;
 
     /**
-     * @var \RobertBoes\LaravelLti\ToolProvider\ToolConsumer
+     * @var ToolConsumer
      */
     private $toolConsumer = null;
 
-    /**
-     */
     public function __construct()
     {
         $connection = 'database. ' . config('database.default');
@@ -36,13 +34,14 @@ class LtiService
     }
 
     /**
+     * @return DataConnector
      */
     public function getDataConnector() {
         return $this->data_connector;
     }
 
     /**
-     * @return \RobertBoes\LaravelLti\ToolProvider\ToolProvider
+     * @return ToolProvider
      */
     public function toolProvider()
     {
@@ -53,7 +52,7 @@ class LtiService
     }
 
     /**
-     * @return \RobertBoes\LaravelLti\ToolProvider\ToolConsumer
+     * @return ToolConsumer
      */
     public function toolConsumer()
     {

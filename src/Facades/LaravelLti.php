@@ -4,8 +4,6 @@ namespace RobertBoes\LaravelLti\Facades;
 
 use Illuminate\Support\Facades\Facade as IlluminateFacade;
 
-/**
- */
 class LaravelLti extends IlluminateFacade
 {
     /**

@@ -3,8 +3,6 @@
 namespace RobertBoes\LaravelLti\Commands;
 
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\DB;
-use IMSGlobal\LTI\ToolProvider\ToolConsumer;
 use RobertBoes\LaravelLti\Services\LtiService;
 
 class CreateToolConsumerCommand extends Command
@@ -14,7 +12,7 @@ class CreateToolConsumerCommand extends Command
     protected $description = 'Creates a new tool consumer';
 
     /**
-     * @var \RobertBoes\LaravelLti\Services\LtiServce
+     * @var LtiService
      */
     protected $lti;
 
@@ -35,7 +33,7 @@ class CreateToolConsumerCommand extends Command
     /**
      * Execute the console command.
      *
-     * @return mixed
+     * @return void
      */
     public function handle()
     {
@@ -58,6 +56,5 @@ class CreateToolConsumerCommand extends Command
             }
         }
         $this->toolConsumer->save();
-        return;
     }
 }
