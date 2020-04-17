@@ -26,18 +26,16 @@ class LtiService
      */
     private $toolConsumer = null;
 
-    public function __construct()
-    {
-        $connection = 'database. ' . config('database.default');
-        $db = DB::connection(config($connection))->getPdo();
-        $this->data_connector = DataConnector::getDataConnector(config($connection . '.prefix'), $db, 'pdo');
-    }
-
     /**
      * @return DataConnector
      */
     public function getDataConnector() {
-        return $this->data_connector;
+        if ($this->data_connector instanceof DataConnector) {
+            return $this->data_connector;
+        }
+        $connection = 'database. ' . config('database.default');
+        $db = DB::connection(config($connection))->getPdo();
+        return $this->data_connector = DataConnector::getDataConnector(config($connection . '.prefix'), $db, 'pdo');
     }
 
     /**
