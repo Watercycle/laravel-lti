@@ -20,7 +20,7 @@
         }
     },
     "require": {
-        "php": "^7.2",
+        "php": ">=7.2",
         "izumi-kun/lti": "^1.2"
     },
     "require-dev": {
